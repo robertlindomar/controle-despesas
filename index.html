@@ -1,0 +1,79 @@
+<!DOCTYPE html> <!-- Declaração do tipo de documento HTML -->
+<html lang="pt-br"> <!-- Define o idioma da página como português do Brasil -->
+<head>
+    <meta charset="UTF-8" /> <!-- Define o conjunto de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Configura a escala inicial da página para se adaptar a diferentes dispositivos -->
+    <link rel="stylesheet" href="./style-alternativo.css" /> <!-- Inclui um arquivo CSS externo chamado style.css -->
+    <title>Controle de despesas</title> <!-- Define o título da página exibido na aba do navegador -->
+</head>
+<body>
+    <h2>Controle de despesas</h2> <!-- Título principal da página -->
+    
+    <div class="switch-container">
+  <input type="checkbox" id="mudarEstilo" class="switch-input" checked>
+  <label for="mudarEstilo" class="switch-label"></label>
+</div>
+<link rel="stylesheet" href="./style-alternativo.css" id="estiloCss" />
+
+    <div class="container"> <!-- Um container para agrupar conteúdo -->
+        <h4>Saldo atual</h4> <!-- Título para o saldo atual -->
+        
+        <h1 id="balance" class="balance">R$ 0.00</h1> <!-- Exibição do saldo atual com um ID para manipulação via JavaScript -->
+
+        <div class="inc-exp-container"> <!-- Container para exibir receitas e despesas -->
+            <div>
+                <h4>Receitas</h4> <!-- Título para as receitas -->
+                <p id="money-plus" class="money plus">+ R$0.00</p> <!-- Exibição de receitas com um ID para manipulação via JavaScript -->
+            </div>
+
+            <div>
+                <h4>Despesas</h4> <!-- Título para as despesas -->
+                <p id="money-minus" class="money minus">- R$0.00</p> <!-- Exibição de despesas com um ID para manipulação via JavaScript -->
+            </div>
+        </div>
+
+        <h3>Transações</h3> <!-- Título para a seção de transações -->
+        
+        <ul id="transactions" class="transactions"> <!-- Lista de transações com um ID para manipulação via JavaScript -->
+            <!-- Itens de transação serão adicionados dinamicamente aqui -->
+        </ul>
+
+        <h3>Adicionar transação</h3> <!-- Título para a seção de adição de transação -->
+        
+        <form id="form"> <!-- Formulário para adicionar uma nova transação com um ID para manipulação via JavaScript -->
+            <div class="form-control">
+                <label for="text">Nome</label> <!-- Rótulo para o campo de nome da transação -->
+                <input autofocus type="text" id="text" placeholder="Nome da transação" /> <!-- Campo de entrada de texto para o nome da transação -->
+            </div>
+
+            <div class="form-control">
+                <label for="amount">Valor <br />
+                    <small>(negativo - despesas, positivo - receitas)</small>
+                </label> <!-- Rótulo para o campo de valor da transação com uma explicação -->
+                <input type="number" id="amount" placeholder="Valor da transação" /> <!-- Campo de entrada numérica para o valor da transação -->
+            </div>
+
+            <button class="btn">Adicionar</button> <!-- Botão para adicionar a transação -->
+        </form>
+    </div>
+
+    <script>
+        // JavaScript para alternar entre os estilos ao clicar no botão "Mudar Estilo"
+        const estiloCss = document.getElementById("estiloCss");
+        const mudarEstiloButton = document.getElementById("mudarEstilo");
+        let estiloPadrao = true;
+
+        mudarEstiloButton.addEventListener("click", () => {
+            if (estiloPadrao) {
+                estiloCss.href = "./style.css";
+                estiloPadrao = false;
+            } else {
+                estiloCss.href = "./style-alternativo.css"; // Altere para o nome do seu arquivo CSS alternativo, se necessário
+                estiloPadrao = true;
+            }
+        });
+    </script>
+
+    <script src="script.js"></script> <!-- Inclui um arquivo JavaScript externo chamado script.js -->
+</body>
+</html>

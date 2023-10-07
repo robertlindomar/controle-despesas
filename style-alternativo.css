@@ -1,0 +1,233 @@
+/* Importar a fonte Lato do Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+/* Variáveis de cores e sombras definidas para reutilização */
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --background-color: #121212;
+  --text-color: #fff;
+  --accent-color: #2e75cc;
+  --positive-color: #2ecc71;
+  --negative-color: #c0392b;
+}
+
+/* Configuração global */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+  background-color: var(--background-color); /* Define a cor de fundo da página */
+  color: var(--text-color); /* Define a cor do texto */
+  display: flex; /* Exibe os elementos em um layout flexível */
+  flex-direction: column; /* Organiza os elementos em coluna */
+  align-items: center; /* Centraliza os elementos horizontalmente */
+  justify-content: center; /* Centraliza os elementos verticalmente */
+  min-height: 100vh; /* Garante que o conteúdo ocupe pelo menos a altura da tela */
+  margin: 0; /* Remove margens padrão do corpo */
+  font-family: 'Lato', sans-serif; /* Define a fonte padrão para o corpo do texto */
+}
+
+/* Estilo do contêiner principal */
+.container {
+  margin: 30px auto; /* Define margens para o contêiner */
+  width: 350px; /* Define a largura do contêiner */
+  background-color: #1f1f1f; /* Define a cor de fundo do contêiner */
+  border-radius: 5px; /* Adiciona cantos arredondados ao contêiner */
+  padding: 20px; /* Adiciona espaçamento interno ao contêiner */
+  box-shadow: var(--box-shadow); /* Aplica uma sombra usando a variável --box-shadow */
+}
+
+/* Estilo dos cabeçalhos (h1, h3, h4) */
+h1 {
+  letter-spacing: 1px; /* Adiciona espaçamento entre letras ao título h1 */
+  margin: 0; /* Remove margens padrão do título h1 */
+  color: var(--accent-color); /* Define a cor do título h1 usando a variável --accent-color */
+}
+
+h3 {
+  border-bottom: 1px solid #555; /* Adiciona uma linha inferior aos títulos h3 */
+  padding-bottom: 10px; /* Adiciona espaçamento inferior aos títulos h3 */
+  margin: 40px 0 10px; /* Define margens para os títulos h3 */
+}
+
+h4 {
+  margin: 0; /* Remove margens padrão do título h4 */
+  text-transform: uppercase; /* Transforma o texto em maiúsculas */
+}
+
+/* Estilo do contêiner de Receitas e Despesas */
+.inc-exp-container {
+  background-color: #292929; /* Define a cor de fundo do contêiner de Receitas e Despesas */
+  box-shadow: var(--box-shadow); /* Aplica uma sombra usando a variável --box-shadow */
+  padding: 20px; /* Adiciona espaçamento interno ao contêiner */
+  display: flex; /* Exibe os elementos internos em um layout flexível */
+  justify-content: space-between; /* Distribui os elementos internos uniformemente */
+  margin: 20px 0; /* Define margens para o contêiner de Receitas e Despesas */
+  border-radius: 5px; /* Adiciona cantos arredondados ao contêiner */
+}
+
+.inc-exp-container > div {
+  flex: 1; /* Faz com que as divs internas ocupem a mesma largura */
+  text-align: center; /* Centraliza o texto dentro das divs internas */
+}
+
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid #555; /* Adiciona uma borda direita à primeira div interna */
+}
+
+/* Estilo dos valores monetários (.money) */
+.money {
+  font-size: 20px; /* Define o tamanho da fonte para valores monetários */
+  letter-spacing: 1px; /* Adiciona espaçamento entre letras */
+  margin: 5px 0; /* Define margens para os valores monetários */
+}
+
+.money.plus {
+  color: var(--positive-color); /* Define a cor dos valores positivos usando a variável --positive-color */
+}
+
+.money.minus {
+  color: var(--negative-color); /* Define a cor dos valores negativos usando a variável --negative-color */
+}
+
+/* Estilo das etiquetas de campos (labels) */
+label {
+  display: inline-block; /* Faz com que as etiquetas se comportem como blocos */
+  margin: 10px 0; /* Define margens para as etiquetas */
+}
+
+/* Estilo dos campos de entrada de texto e número */
+input[type='text'],
+input[type='number'] {
+  border: 1px solid #555; /* Adiciona uma borda aos campos de entrada */
+  border-radius: 2px; /* Adiciona cantos levemente arredondados */
+  display: block; /* Faz com que os campos de entrada se comportem como blocos */
+  font-size: 16px; /* Define o tamanho da fonte para campos de entrada */
+  padding: 10px; /* Adiciona espaçamento interno aos campos de entrada */
+  width: 100%; /* Faz com que os campos de entrada ocupem 100% da largura disponível */
+  background-color: #333; /* Define a cor de fundo dos campos de entrada */
+  color: var(--text-color); /* Define a cor do texto usando a variável --text-color */
+}
+
+/* Estilo dos botões (.btn) */
+.btn {
+  cursor: pointer; /* Define o cursor como uma mão ao passar o mouse sobre o botão */
+  background-color: var(--accent-color); /* Define a cor de fundo do botão usando a variável --accent-color */
+  box-shadow: var(--box-shadow); /* Aplica uma sombra usando a variável --box-shadow */
+  color: #fff; /* Define a cor do texto no botão como branco */
+  border: 0; /* Remove a borda do botão */
+  display: block; /* Faz com que o botão se comporte como um bloco */
+  font-size: 16px; /* Define o tamanho da fonte para o botão */
+  margin: 10px 0 30px; /* Define margens para o botão */
+  padding: 10px; /* Adiciona espaçamento interno ao botão */
+  width: 100%; /* Faz com que o botão ocupe 100% da largura disponível */
+  border-radius: 5px; /* Adiciona cantos arredondados ao botão */
+}
+
+/* Estilo dos botões ao receber foco */
+.btn:focus,
+.delete-btn:focus {
+  outline: 0; /* Remove a borda de foco ao clicar no botão */
+}
+
+/* Estilo da lista de transações (.transactions) */
+.transactions {
+  list-style-type: none; /* Remove os marcadores de lista */
+  padding: 0; /* Remove o preenchimento padrão da lista */
+  margin-bottom: 40px; /* Define margens na parte inferior da lista */
+}
+
+/* Estilo das entradas na lista de transações (.transactions li) */
+.transactions li {
+  background-color: #292929; /* Define a cor de fundo das entradas da lista */
+  box-shadow: var(--box-shadow); /* Aplica uma sombra às entradas usando a variável --box-shadow */
+  color: var(--text-color); /* Define a cor do texto usando a variável --text-color */
+  display: flex; /* Exibe as entradas da lista em um layout flexível */
+  justify-content: space-between; /* Distribui os elementos internos uniformemente */
+  position: relative; /* Define a posição como relativa para posicionamento absoluto do botão de exclusão */
+  padding: 10px; /* Adiciona espaçamento interno às entradas da lista */
+  margin: 10px 0; /* Define margens para as entradas da lista */
+  border-radius: 5px; /* Adiciona cantos arredondados às entradas da lista */
+}
+
+/* Estilo das entradas de receita na lista de transações */
+.transactions li.plus {
+  border-right: 5px solid var(--positive-color); /* Adiciona uma borda direita colorida para entradas de receita */
+}
+
+/* Estilo das entradas de despesa na lista de transações */
+.transactions li.minus {
+  border-right: 5px solid var(--negative-color); /* Adiciona uma borda direita colorida para entradas de despesa */
+}
+
+/* Estilo do botão de exclusão (.delete-btn) */
+.delete-btn {
+  cursor: pointer; /* Define o cursor como uma mão ao passar o mouse sobre o botão */
+  background-color: #e74c3c; /* Define a cor de fundo do botão de exclusão */
+  border: 0; /* Remove a borda do botão */
+  color: #fff; /* Define a cor do texto no botão como branco */
+  font-size: 20px; /* Define o tamanho da fonte para o botão de exclusão */
+  line-height: 20px; /* Define a altura da linha para o botão de exclusão */
+  padding: 2px 5px; /* Adiciona espaçamento interno ao botão de exclusão */
+  position: absolute; /* Define a posição como absoluta para permitir posicionamento personalizado */
+  top: 50%; /* Define a posição vertical no centro */
+  left: 0; /* Define a posição à esquerda do elemento pai */
+  transform: translate(-100%, -50%); /* Move o botão para a esquerda e centraliza verticalmente */
+  opacity: 0; /* Define a opacidade inicial do botão como 0 (invisível) */
+  transition: opacity 0.3s ease; /* Adiciona uma transição suave de opacidade */
+  border-radius: 5px; /* Adiciona cantos arredondados ao botão de exclusão */
+}
+
+/* Estilo do botão de exclusão ao passar o mouse */
+.transactions li:hover .delete-btn {
+  opacity: 1; /* Torna o botão de exclusão visível ao passar o mouse sobre a entrada da lista */
+}
+
+/*BAOTAO PARA MUDAR A COR*/
+/* Estilo do switch container */
+.switch-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Estilo do switch input (oculto) */
+.switch-input {
+  display: none;
+}
+
+/* Estilo do switch label (a aparência do switch) */
+.switch-label {
+  display: block;
+  width: 40px; /* Largura do switch */
+  height: 20px; /* Altura do switch */
+  background-color: #ccc; /* Cor de fundo do switch desativado */
+  border-radius: 20px; /* Raio de borda para torná-lo redondo */
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo do switch label quando está ligado */
+.switch-input:checked + .switch-label {
+  background-color: #444; /* Cor de fundo do switch ativado */
+}
+
+/* Estilo do ponto (círculo) dentro do switch */
+.switch-label::after {
+  content: '';
+  width: 16px; /* Largura do ponto */
+  height: 16px; /* Altura do ponto */
+  background-color: #fff; /* Cor do ponto */
+  border-radius: 50%; /* Torna o ponto circular */
+  position: absolute;
+  top: 2px; /* Posição vertical do ponto */
+  left: 2px; /* Posição horizontal do ponto quando desligado */
+  transition: left 0.3s ease;
+}
+
+/* Estilo do ponto quando o switch está ligado */
+.switch-input:checked + .switch-label::after {
+  left: 22px; /* Posição horizontal do ponto quando ligado */
+}
